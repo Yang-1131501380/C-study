@@ -3,7 +3,7 @@
 
 // 定义第一个命名空间，负责数学相关操作  
 namespace Math {  
-    // 函数：计算一个数的平方111
+    // 函数：计算一个数的平方
     int square(int x) {  
         return x * x;  
     }  
