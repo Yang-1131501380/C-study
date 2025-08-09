@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/desk/C++Study/for_in_range",
-      "program": "d:/desk/C++Study/for_in_range/build/Debug/outDebug",
+      "cwd": "d:/desk/C++Study/sort",
+      "program": "d:/desk/C++Study/sort/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

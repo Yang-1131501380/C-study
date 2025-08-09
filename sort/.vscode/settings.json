@@ -63,7 +63,6 @@
     "cctype": "cpp",
     "clocale": "cpp",
     "cmath": "cpp",
-    "cstdarg": "cpp",
     "cstddef": "cpp",
     "cstdint": "cpp",
     "cstdio": "cpp",
@@ -77,7 +76,6 @@
     "algorithm": "cpp",
     "memory": "cpp",
     "memory_resource": "cpp",
-    "optional": "cpp",
     "string": "cpp",
     "string_view": "cpp",
     "system_error": "cpp",
@@ -96,10 +94,7 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp",
-    "set": "cpp",
-    "map": "cpp",
-    "stack": "cpp",
-    "queue": "cpp",
-    "list": "cpp"
+    "optional": "cpp",
+    "cstdarg": "cpp"
   }
 }
