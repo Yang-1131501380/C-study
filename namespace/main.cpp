@@ -1,7 +1,8 @@
 #include <iostream>  
 #include <string>  
 
-// 定义第一个命名空间，负责数学相关操作  
+// 定义第一个命名空间，负责数学相关操作
+//hello  
 namespace Math {  
     // 函数：计算一个数的平方
     int square(int x) {  
