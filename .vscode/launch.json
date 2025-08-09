@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/desk/C++Study/string",
-      "program": "d:/desk/C++Study/string/build/Release/outRelease",
+      "cwd": "d:/desk/C++Study/queue",
+      "program": "d:/desk/C++Study/queue/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
