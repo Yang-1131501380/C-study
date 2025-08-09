@@ -1,59 +1,69 @@
 #include <iostream>  
-#include <string> // å¼•å…¥å­—ç¬¦ä¸²åº“  
-#include <algorithm> // å¼•å…¥ç®—æ³•åº“ï¼ˆç”¨äºä¿®æ”¹å­—ç¬¦ä¸²ï¼‰  
+#include <string>      // ÒıÈë×Ö·û´®¿â  
+#include <algorithm>   // ÒıÈëËã·¨¿â£¨ÓÃÓÚĞŞ¸Ä×Ö·û´®£©  
+#include <windows.h>   // ÒıÈëWindows APIÒÔÉèÖÃ±àÂë  
 
 using namespace std;  
 
+
+
 int main() {  
-    // å®šä¹‰ä¸€ä¸ªå­—ç¬¦ä¸²å˜é‡  
+    
+
+    // ¶¨ÒåÒ»¸ö×Ö·û´®±äÁ¿  
     string userInput;  
 
-    // æç¤ºç”¨æˆ·è¾“å…¥å­—ç¬¦ä¸²  
-    cout << "è¯·è¾“å…¥ä¸€ä¸ªå­—ç¬¦ä¸²ï¼š";  
-    // ä½¿ç”¨ getline è¯»å–æ•´è¡Œè¾“å…¥ï¼ŒåŒ…æ‹¬ç©ºæ ¼  
+    // ÌáÊ¾ÓÃ»§ÊäÈë×Ö·û´®  
+    cout << "ÇëÊäÈëÒ»¸ö×Ö·û´®£º";  
+    // Ê¹ÓÃ getline ¶ÁÈ¡ÕûĞĞÊäÈë£¬°üÀ¨¿Õ¸ñ  
     getline(cin, userInput);  
 
-    // æ˜¾ç¤ºè¾“å…¥çš„å­—ç¬¦ä¸²  
-    cout << "æ‚¨è¾“å…¥çš„å­—ç¬¦ä¸²æ˜¯: " << userInput << endl;  
+    // ÏÔÊ¾ÊäÈëµÄ×Ö·û´®  
+    cout << "ÄúÊäÈëµÄ×Ö·û´®ÊÇ: " << userInput << endl;  
 
-    // è·å–å­—ç¬¦ä¸²é•¿åº¦  
-    cout << "å­—ç¬¦ä¸²é•¿åº¦ä¸º: " << userInput.length() << endl;  
+    // »ñÈ¡×Ö·û´®³¤¶È  
+    cout << "×Ö·û´®³¤¶ÈÎª: " << userInput.length() << endl;  
 
-    // æŸ¥æ‰¾ç‰¹å®šå­—ç¬¦åœ¨å­—ç¬¦ä¸²ä¸­çš„ä½ç½®  
+    // ²éÕÒÌØ¶¨×Ö·ûÔÚ×Ö·û´®ÖĞµÄÎ»ÖÃ  
     char ch;  
-    cout << "è¯·è¾“å…¥æ‚¨æƒ³æŸ¥æ‰¾çš„å­—ç¬¦: ";  
+    cout << "ÇëÊäÈëÄúÏë²éÕÒµÄ×Ö·û: ";  
     cin >> ch;  
-    size_t position = userInput.find(ch); // ä½¿ç”¨ find æ–¹æ³•æŸ¥æ‰¾å­—ç¬¦  
-    if (position != string::npos) { // å¦‚æœæ‰¾åˆ°äº†å­—ç¬¦  
-        cout << "å­—ç¬¦ '" << ch << "' åœ¨ä½ç½® " << position << " æ‰¾åˆ°ã€‚" << endl;  
+    size_t position = userInput.find(ch); // Ê¹ÓÃ find ·½·¨²éÕÒ×Ö·û  
+    if (position != string::npos) { // Èç¹ûÕÒµ½ÁË×Ö·û  
+        cout << "×Ö·û '" << ch << "' ÔÚÎ»ÖÃ " << position << " ÕÒµ½¡£" << endl;  
     } else {  
-        cout << "å­—ç¬¦ '" << ch << "' æœªæ‰¾åˆ°ã€‚" << endl;  
+        cout << "×Ö·û '" << ch << "' Î´ÕÒµ½¡£" << endl;  
     }  
 
-    // æ›¿æ¢å­—ç¬¦ä¸²ä¸­çš„å­—ç¬¦  
+    // Ìæ»»×Ö·û´®ÖĞµÄ×Ö·û  
     char oldChar, newChar;  
-    cout << "è¯·è¾“å…¥è¦æ›¿æ¢çš„å­—ç¬¦å’Œæ–°å­—ç¬¦ï¼ˆç”¨ç©ºæ ¼åˆ†å¼€ï¼‰: ";  
+    cout << "ÇëÊäÈëÒªÌæ»»µÄ×Ö·ûºÍĞÂ×Ö·û£¨ÓÃ¿Õ¸ñ·Ö¿ª£©: ";  
     cin >> oldChar >> newChar;  
 
-    // ä½¿ç”¨ range-based for å¾ªç¯å’Œæ›¿æ¢å­—ç¬¦  
+    // Ê¹ÓÃ range-based for Ñ­»·ºÍÌæ»»×Ö·û  
     for (char &c : userInput) {  
         if (c == oldChar) {  
-            c = newChar; // æ›¿æ¢å­—ç¬¦  
+            c = newChar; // Ìæ»»×Ö·û  
         }  
     }  
-    cout << "æ›¿æ¢åçš„å­—ç¬¦ä¸²: " << userInput << endl;  
+    cout << "Ìæ»»ºóµÄ×Ö·û´®: " << userInput << endl;  
 
-    // å­—ç¬¦ä¸²è¿æ¥  
+    // ×Ö·û´®Á¬½Ó  
     string additionalInput;  
-    cout << "è¯·è¾“å…¥è¦è¿æ¥çš„å¦ä¸€ä¸ªå­—ç¬¦ä¸²: ";  
-    cin.ignore(); // æ¸…é™¤è¾“å…¥ç¼“å†²åŒº  
-    getline(cin, additionalInput); // å†æ¬¡è¯»å–æ•´è¡Œè¾“å…¥  
-    string combinedString = userInput + " " + additionalInput; // è¿æ¥å­—ç¬¦ä¸²  
-    cout << "è¿æ¥åçš„å­—ç¬¦ä¸²: " << combinedString << endl;  
+    cout << "ÇëÊäÈëÒªÁ¬½ÓµÄÁíÒ»¸ö×Ö·û´®: ";  
+    cin.ignore(); // Çå³ıÊäÈë»º³åÇø  
+    getline(cin, additionalInput); // ÔÙ´Î¶ÁÈ¡ÕûĞĞÊäÈë  
+    string combinedString = userInput + " " + additionalInput; // Á¬½Ó×Ö·û´®  
+    cout << "Á¬½ÓºóµÄ×Ö·û´®: " << combinedString << endl;  
 
-    // å°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºå¤§å†™ï¼ˆä½¿ç”¨ç®—æ³•åº“ä¸­çš„ transformï¼‰  
+    // ½«×Ö·û´®×ª»»Îª´óĞ´£¨Ê¹ÓÃËã·¨¿âÖĞµÄ transform£©  
     transform(combinedString.begin(), combinedString.end(), combinedString.begin(), ::toupper);  
-    cout << "å¤§å†™å­—ç¬¦ä¸²: " << combinedString << endl;  
+    cout << "´óĞ´×Ö·û´®: " << combinedString << endl;  
 
-    return 0; // ç¨‹åºæˆåŠŸç»“æŸ  
+    return 0; // ³ÌĞò³É¹¦½áÊø  
+
+
+
+
+
 }
